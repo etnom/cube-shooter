@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class PlayerBehavior : MonoBehaviour {
 
 	public float speed;
-
 	private Rigidbody rb;
 
 	// Use this for initialization
@@ -21,9 +20,10 @@ public class Player : MonoBehaviour {
 	void FixedUpdate () {
 		float moveHorizonal = Input.GetAxis("Horizontal");
 		float moveVertical = Input.GetAxis("Vertical");
-		
-		Vector3 movement = new Vector3 (moveHorizonal, 0.0f, moveVertical);
 
+		Vector3 movement = new Vector3 (moveHorizonal, 0.0f, moveVertical);
 		rb.AddForce(movement * speed);
 	}
 }
+
+
